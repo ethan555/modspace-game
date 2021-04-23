@@ -16,3 +16,5 @@ weapon_y = display_get_gui_height() * 7/8;
 weapon_x_spacing = display_get_gui_width() / 20;
 
 map_size = display_get_gui_height() - 8;
+
+message_y = display_get_gui_height() * 3/4;

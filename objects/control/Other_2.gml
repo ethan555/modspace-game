@@ -98,6 +98,12 @@ faction_map[? NO] = none_map;
 
 globalvar united_nations_shops;
 united_nations_shops = init_un_shop_map();
+
+globalvar faction_color;
+faction_color = ds_map_create();
+faction_color[? UN] = c_aqua;
+faction_color[? NO] = c_fuchsia;
+faction_color[? SA] = c_yellow;
 #endregion
 
 #region Player Stats
@@ -142,6 +148,64 @@ global_component_collision_list = ds_list_create();
 init_particles();
 globalvar part_emitter;
 part_emitter = part_emitter_create(part_system);
+
+globalvar dialogue_buffer, dialogue_index, dialogue_faction_data;
+dialogue_buffer = array_create(60);
+dialogue_index = 0;
+dialogue_faction_data = {
+	un: {
+		normal: {
+			friend: [
+				"Greetings, %NAME%!",
+				"Any news, %NAME%?"
+			],
+			enemy: [
+				"Keep your distance, %NAME%!"
+			],
+			none: [
+				"What a lovely day."
+			]
+		},
+		aggressive: {
+			friend: [
+				"Keep an eye out, %NAME%.",
+				"Got your 6, %NAME%."
+			],
+			enemy: [
+				"Try it, %NAME%!"
+			],
+			none: [
+				"Patrolling."
+			]
+		}
+	},
+	no: {
+		normal: {
+			friend: [
+				"Good hunting, %NAME%!",
+				"Watching with interest, %NAME%."
+			],
+			enemy: [
+				"You're out of your element, %NAME%!"
+			],
+			none: [
+				"Searching..."
+			]
+		},
+		aggressive: {
+			friend: [
+				"Smells like fresh meat, %NAME%.",
+				"This will be our big break, %NAME%."
+			],
+			enemy: [
+				"You're done, %NAME%!"
+			],
+			none: [
+				"The hunt is on."
+			]
+		}
+	}
+};
 #endregion
 
 if (!instance_exists(view_control)) {

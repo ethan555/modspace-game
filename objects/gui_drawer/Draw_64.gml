@@ -84,6 +84,12 @@ if (!construction && instance_exists(player)) {
 	}
 	#endregion
 	
+	#region Draw Messages
+	if (map_scale < 1) {
+		draw_dialogue();
+	}
+	#endregion
+	
 	#region Draw map
 	var map_size_scaled = map_size * map_scale;
 	var xmin = map_x, xmax = map_x+map_size_scaled, ymin = map_y, ymax = map_y+map_size_scaled;

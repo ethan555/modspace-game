@@ -34,6 +34,14 @@
 #macro NO "None"
 #endregion
 
+#region Dialogue Types
+#macro UN_D "un"
+#macro NO_D "no"
+#macro SA_D "sa"
+#macro NORMAL "normal"
+#macro AGGRESSIVE "aggressive"
+#endregion
+
 #region Draw Depths
 #macro PLAYER_LAYER "PlayerLayer"
 #macro SHIP_LAYER "ShipLayer"
@@ -78,6 +86,8 @@
 #region GUI Constants
 #macro GUI_BAR_RATE 2
 #macro GUI_BAR_DISAPPEAR_TIME seconds_to_frames(1)
+
+#macro DIALOGUE_ALARM 5
 #endregion
 
 #region EFFECT CONSTANTS

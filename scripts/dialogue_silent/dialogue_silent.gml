@@ -1,0 +1,3 @@
+function dialogue_silent(){
+
+}
