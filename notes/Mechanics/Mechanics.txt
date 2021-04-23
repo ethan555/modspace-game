@@ -1,0 +1,3 @@
+Weapon aiming:
+	Primary weapons left click secondary right click, ctrl+click autotargets them to a certain ship
+	Automatic weapons have their own targets, anti-missile/fighter guns
