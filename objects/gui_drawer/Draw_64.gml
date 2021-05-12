@@ -134,6 +134,7 @@ if (!construction && instance_exists(player)) {
 			}
 		}
 		// Draw map name
+		draw_set_font(display_font);
 		draw_sprite_ext(rectangle_sp,0,map_x+1,ymax-(map_name_height+1),map_size_scaled - 2,map_name_height,0,c_black,gui_alpha);
 		draw_set_halign(fa_left);
 		draw_set_valign(fa_bottom);

@@ -8,7 +8,7 @@ function dock_init_un() {
 	ds_list_add(system_dock_states,SHOP,COMMERCE,MERCENARY,HQ);
 	system_dock_map[? SHOP] = [
 		make_dist(UN,LAYOUT,1000),
-		make_dist(UN,WEAPONS,200),
+		make_dist(UN,WEAPONS,1000),
 		make_dist(UN,ARMOR,200),
 		make_dist(UN,SHIELDS,200),
 		make_dist(UN,ENGINES,200),

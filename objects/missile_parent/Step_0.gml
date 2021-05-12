@@ -7,7 +7,7 @@ event_inherited();
 
 if (!instance_exists(target) || !instance_exists(target.parent) || target.destroyed) {
 	//var collision_number = 
-	collision_circle_list(x,y,track_radius,solid_parent,false,true,global_collision_list,true);
+	collision_circle_list(x,y,track_radius,targetable_parent,false,true,global_collision_list,true);
 	for (var i = 0, collision_number = ds_list_size(global_collision_list); i < collision_number; i++) {
 		var collision = global_collision_list[| i];
 		if (instance_exists(collision) && !collision.destroyed) {
@@ -42,7 +42,7 @@ if (instance_exists(target)) {
 	target_y += lengthdir_y(target.spd*(target_dist/spd),target.dir);
 	var target_dir = point_direction(x,y,target_x,target_y);
 	var angle_diff = abs(angle_difference(target_dir, image_angle));
-	var angle_ratio = clamp(track_radius/target_dist,1,3);
+	var angle_ratio = clamp(track_radius/target_dist,1,5);
 	
 	// If in flight mode
 	if (pspd <= 0) {
@@ -52,7 +52,7 @@ if (instance_exists(target)) {
 			angle_velocity = turn_towards_angle(image_angle, target_dir, angle_velocity, max_angle_velocity, angle_accel_rate * angle_ratio);
 			image_angle += angle_velocity;
 	
-			var dx = lengthdir_x(accel_rate / 4,dir), dy = lengthdir_y(accel_rate / 4,dir);
+			var dx = lengthdir_x(decel_rate,dir), dy = lengthdir_y(decel_rate,dir);
 			xspd = reduce(xspd,dx);
 			yspd = reduce(yspd,dy);
 		} else {

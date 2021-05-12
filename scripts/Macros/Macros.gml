@@ -10,6 +10,7 @@
 #macro WARP_SCALE 4
 
 #macro COMBAT_TIME seconds_to_frames(5);
+#macro COMBAT_DISTANCE 1000
 #endregion
 
 #region Input Macros

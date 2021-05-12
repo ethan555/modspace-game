@@ -18,7 +18,7 @@ if (instance_exists(player)) {
 	var my = mouse_y;
 	var move_rate = 1;//min(1, lerp_rate / (zoom * zoom_lerp_effect));
 	var view_zoom_offset = max(1,zoom * zoom_lerp_effect);
-	var aim_offset = aim_distance / view_zoom_offset;
+	var aim_offset = lerp(aim_distance_min,aim_distance_max, 1 - zoom / zoom_max);
 	var zoom_offset = min(1, view_offset_rate * view_zoom_offset);
 	var t_x = round(target_.x);
 	var t_y = round(target_.y);

@@ -21,6 +21,7 @@ function turn_towards_angle(a, b, velocity, max_velocity, acceleration){
 		}
 		*/
 	}
+	v_value = abs(v);
 	if (v_value >= d_value) {
 		v = delta;
 	}

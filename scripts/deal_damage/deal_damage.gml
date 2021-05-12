@@ -20,8 +20,10 @@ function deal_damage(x_, y_, type_) {
 		// Deal energy damage
 		energy = max(0, energy - type_.electric);
 		// Reset shield refresh counter
-		if (type_.electric > 0) shield_refresh_counter = max(shield_refresh_counter - d * type_.electric * SHIELD_DAMAGE_TIME, 0);
-		else shield_refresh_counter = max(shield_refresh_counter - d * SHIELD_DAMAGE_TIME, 0);
+		if (type_.electric > 0)
+			shield_refresh_counter = max(-(d * type_.electric * SHIELD_DAMAGE_TIME), - shield_refresh_time);
+		else
+			shield_refresh_counter = 0;
 		
 		if (shields > 0) {
 			// Do shields effects
@@ -58,9 +60,10 @@ function deal_damage(x_, y_, type_) {
 		hp = clamp(hp - d, 0, hp);
 		var hp_difference = hp_prev - hp;
 		hp_damage = d;
-		var scrap = ceil(type_.scrap * hp_difference);
+		var scrap_damage_dealt = type_.scrap * hp_difference;
+		scrap_damage += scrap_damage_dealt;
 		script_execute(hit_script,x_,y_);
-		var scrap_amount = min(10, floor(scrap));
+		var scrap_amount = particle_number_from_damage(scrap_damage_dealt);
 		if (scrap_amount > 0)
 			part_particles_create(part_system,x_,y_,part_scrap,scrap_amount);
 	}

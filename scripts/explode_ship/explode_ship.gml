@@ -13,19 +13,13 @@ function explode_ship(){
 	for (var i = 0, length = ds_list_size(layout_inst_list); i < length; ++i) {
 	    var inst = layout_inst_list[| i];
 		with (inst) {
-			destroy_part();
-			spd = random_range(-5,5) / weight;
-			dir = random(360);
-			spin = random_range(-10,10) / weight;
+			explode_part();
 		}
 	}
 	for (var i = 0, length = ds_list_size(component_inst_list); i < length; ++i) {
 	    var inst = component_inst_list[| i];
 		with (inst) {
-			destroy_part();
-			spd = random_range(-5,5) / weight;
-			dir = random(360);
-			spin = random_range(-10,10) / weight;
+			explode_component();
 		}
 	}
 	destroyed = true;

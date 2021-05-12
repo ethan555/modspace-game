@@ -13,8 +13,7 @@ function explode_layout(){
 	    var inst = global_component_collision_list[| i];
 		if (inst.parent == parent) {
 			with (inst) {
-				destroyed = true;
-				image_blend = c_dkgray;
+				destroy_part();
 			}
 		}
 	}

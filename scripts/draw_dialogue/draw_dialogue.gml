@@ -3,6 +3,7 @@ function dialogue_display(speaker, dialogue) {
 }
 
 function draw_dialogue() {
+	draw_set_font(display_font);
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_top);
 	var m_x = message_x, m_y = message_y;

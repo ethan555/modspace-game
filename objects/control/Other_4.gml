@@ -2,8 +2,8 @@
 if (!instance_exists(view_control)) {
 	instance_create_depth(x,y,0,view_control);
 }
-if (!instance_exists(trail_draw)) {
-	instance_create_depth(x,y,TRAIL_DEPTH,trail_draw);
+if (!instance_exists(trail_drawer)) {
+	instance_create_depth(x,y,TRAIL_DEPTH,trail_drawer);
 }
 
 collision_point_list(-100,-100,solid_parent,false,true,global_collision_list,false);

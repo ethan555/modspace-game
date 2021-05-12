@@ -18,6 +18,8 @@ if (monitorw <= 1920/2 && monitorh <= 1080/2) {
 surface_resize(application_surface, monitorw / wmult, monitorh / hmult);
 display_set_gui_maximize(monitorw / 2, monitorh / 2);
 window_set_fullscreen(true);
+window_set_cursor(cr_none);
+cursor_sprite = crosshairs_sp;
 #endregion
 
 #region Audio Setup
@@ -214,8 +216,8 @@ if (!instance_exists(view_control)) {
 if (!instance_exists(audio_player)) {
 	instance_create_depth(x,y,0,audio_player);
 }
-if (!instance_exists(trail_draw)) {
-	instance_create_depth(x,y,TRAIL_DEPTH,trail_draw);
+if (!instance_exists(trail_drawer)) {
+	instance_create_depth(x,y,TRAIL_DEPTH,trail_drawer);
 }
 if (!instance_exists(background_drawer)) {
 	instance_create_depth(x,y,BACKGROUND_DEPTH,background_drawer);

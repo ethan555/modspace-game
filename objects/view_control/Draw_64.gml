@@ -1,4 +1,5 @@
 /// @description Draw debug
+if (!debug) return;
 draw_set_color(c_white);
 draw_set_font(display_font);
 	var aim_offset = aim_distance / max(1, zoom * zoom_lerp_effect);

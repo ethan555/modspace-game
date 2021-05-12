@@ -10,25 +10,30 @@ function init_un_shop_map() {
 		new item(gun_machinegun, 100),
 		new item(gun_flak, 90),
 		new item(gun_sniper, 140),
+		new item(gun_missile, 250),
+		new item(gun_grenade, 120),
+		new item(gun_laser, 200),
+		new item(gun_cannon, 220),
 	];
 	un_shop_map[? ARMOR] = [
-		new item(armor_light, 20)
+		new item(armor_light, 20),
+		new item(armor_medium, 50),
+		new item(armor_heavy, 100),
 	];
 	un_shop_map[? SHIELDS] = [
-		new item(shield_light, 100)
+		new item(shield_light, 100),
+		new item(shield_medium, 250),
+		new item(shield_heavy, 500)
 	];
 	un_shop_map[? ENGINES] = [
-		new item(engine_parent, 20)
+		new item(engine_light, 20),
+		new item(engine_medium, 20)
 	];
 	un_shop_map[? REACTORS] = [
-		new item(gun_machinegun, 20),
-		new item(gun_flak, 17),
-		new item(gun_sniper, 30),
+		new item(reactor_parent, 200)
 	];
 	un_shop_map[? ACTIVES] = [
-		new item(gun_machinegun, 100),
-		new item(gun_flak, 90),
-		new item(gun_sniper, 140),
+		new item(active_blink, 100)
 	];
 	un_shop_map[? PASSIVES] = [
 		new item(gun_machinegun, 20),

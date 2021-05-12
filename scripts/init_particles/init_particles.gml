@@ -24,15 +24,16 @@ function init_particles() {
 		part_asteroid;
 
 	part_spark = part_type_create();
-	part_type_shape(part_spark,pt_shape_line);
-	part_type_alpha2(part_spark,1,0);
+	//part_type_shape(part_spark,pt_shape_line);
+	part_type_sprite(part_spark,spark_sp,false,false,false);
+	part_type_alpha3(part_spark,1,1,0);
 	part_type_color_hsv(part_spark,0,0,0,0,240,255);
 	part_type_direction(part_spark,0,360,.01,0);
 	part_type_orientation(part_spark,0,0,0,0,true);
-	part_type_size(part_spark,.1,.1,0,0);
+	part_type_size(part_spark,.2,.4,.05,0);
 	part_type_speed(part_spark,5,10,-.25,0);
 	//part_type_gravity(part_spark,.05,270);
-	part_type_life(part_spark,seconds_to_frames(.2),seconds_to_frames(.3));
+	part_type_life(part_spark,seconds_to_frames(.1),seconds_to_frames(.3));
 	//part_type_step(part_spark,1,part_trail);
 
 	part_dust = part_type_create();
